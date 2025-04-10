@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Productos</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Administración de Productos</h1>
+        <a href="index.html">Ir a la página de Usuario</a>
+    </header>
+
+    <main>
+        <section id="formulario-producto">
+            <h2>Agregar/Editar Producto</h2>
+            <form id="producto-form">
+                <input type="hidden" id="producto-id">  <!-- Campo oculto para IDs en edición -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br><br>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion"></textarea><br><br>
+
+                <label for="imagen">URL de Imagen:</label>
+                <input type="text" id="imagen"><br><br>  <!-- O podrías implementar subida de archivos más adelante -->
+
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" min="0" step="0.01" required><br><br>
+
+                <label for="rebaja">En Rebaja:</label>
+                <input type="checkbox" id="rebaja"><br><br>
+
+                <button type="submit">Guardar Producto</button>
+                <button type="button" id="btn-limpiar-form">Limpiar Formulario</button>
+            </form>
+        </section>
+
+        <section id="lista-productos">
+            <h2>Lista de Productos</h2>
+            <div id="productos-admin-list">
+                <!-- Aquí se listarán los productos dinámicamente con JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Panel de Administración</p>
+    </footer>
+
+    <script src="./js/admin-script.js"></script>
+</body>
+</html>
+ 

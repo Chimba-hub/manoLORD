@@ -1,0 +1,428 @@
+/* Estilos CSS Ampliados - Adaptar y completar por los alumnos */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Ejemplo de color de fondo */
+    color: #333; /* Ejemplo de color de texto principal */
+}
+
+header {
+    background-color: #333; /* Ejemplo de color de header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Espacio entre elementos del header */
+    align-items: center; /* Alinear verticalmente */
+}
+
+header h1 {
+    margin: 0; /* Eliminar margen por defecto del h1 */
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 150px); /* Ejemplo para que el main ocupe al menos toda la altura visible */
+}
+
+footer {
+    background-color: #333; /* Ejemplo de color de footer */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* o fixed si quieres footer fijo */
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- Estilos para el Formulario de Administrador --- */
+#formulario-producto {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-producto h2 {
+    margin-top: 0;
+}
+
+#formulario-producto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#formulario-producto input[type="text"],
+#formulario-producto input[type="number"],
+#formulario-producto textarea {
+    width: calc(100% - 22px); /* Ajuste por el padding y borde */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Para que padding y border no aumenten el ancho total */
+    font-size: 1em;
+}
+
+#formulario-producto textarea {
+    height: 100px; /* Altura inicial para textarea */
+    resize: vertical; /* Permitir redimensionamiento vertical */
+}
+
+#formulario-producto button[type="submit"],
+#formulario-producto button[type="button"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5cb85c; /* Verde para guardar */
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+#formulario-producto button[type="button"] {
+    background-color: #f0ad4e; /* Naranja para limpiar */
+}
+
+#formulario-producto button[type="submit"]:hover,
+#formulario-producto button[type="button"]:hover {
+    opacity: 0.9;
+}
+
+
+/* --- Estilos para la Lista de Productos en Admin --- */
+#lista-productos {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#productos-admin-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+}
+
+.producto-admin-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.producto-admin-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.acciones-producto button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.acciones-producto .btn-editar {
+    background-color: #007bff; /* Azul para editar */
+    color: white;
+}
+
+.acciones-producto .btn-eliminar {
+    background-color: #dc3545; /* Rojo para eliminar */
+    color: white;
+}
+
+.acciones-producto button:hover {
+    opacity: 0.8;
+}
+
+
+/* --- Estilos para el Carrusel --- */
+#carrusel-productos {
+    overflow: hidden; /* Importante para que el carrusel no se desborde */
+    margin-bottom: 30px;
+    position: relative; /* Para posicionar los botones de navegación */
+}
+
+.carrusel-container {
+    width: auto;
+    overflow: hidden; /* Ocultar contenido que se desborda */
+    justify-self: center;
+}
+
+.carrusel-track {
+    display: flex; /* Items uno al lado del otro */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
+}
+
+.carrusel-item {
+    width: 100%; /* Ocupa todo el ancho del contenedor del carrusel */
+    flex-shrink: 0; /* Evitar que los items se encojan */
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    display: block; /* Eliminar espacio debajo de la imagen */
+}
+
+.carrusel-boton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los botones */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carrusel-boton:hover {
+    opacity: 1;
+}
+
+.carrusel-boton-anterior {
+    left: 10px;
+}
+
+.carrusel-boton-siguiente {
+    right: 10px;
+}
+
+
+/* --- Estilos para los Productos en la Página de Usuario (Boxes con Hover) --- */
+#contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo similar al admin */
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto-box {
+    perspective: 1000px; /* Necesario para el efecto 3D */
+    cursor: pointer;
+}
+
+.producto-imagen-container {
+    position: relative;
+    width: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; /* Importante para 3D */
+}
+
+.producto-box:hover .producto-imagen-container {
+    transform: rotateY(180deg);
+}
+
+.imagen-frontal, .imagen-trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ocultar la cara trasera cuando está de espaldas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Para que el padding no afecte el tamaño */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white; /* Fondo blanco para ambos lados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-frontal {
+    z-index: 2; /* Asegurar que la imagen frontal esté por delante inicialmente */
+}
+
+.imagen-trasera {
+    transform: rotateY(180deg); /* Inicialmente de espaldas */
+    text-align: center;
+    color: #333; /* Color de texto para la información trasera */
+}
+
+.imagen-trasera h3 {
+    margin-top: 0;
+    color: #007bff; /* Ejemplo de color para el nombre del producto */
+}
+
+.imagen-trasera .precio {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #28a745; /* Ejemplo de color para el precio */
+}
+
+.imagen-trasera .rebaja-tag {
+    background-color: #dc3545; /* Rojo para la etiqueta de rebaja */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.producto-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Eliminar espacio debajo de la imagen */
+}
+
+
+
+/* --- Estilos para la Sección "Acerca de" --- */
+#acerca-de {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#acerca-de h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#info-integrantes ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#info-integrantes li {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+#mision-vision h3 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#mision-vision p, #acerca-de > p {
+    color: #777;
+    line-height: 1.6;
+}
+
+
+/* --- Estilos para el Footer con Redes Sociales --- */
+footer .redes-sociales {
+    margin-bottom: 10px;
+}
+
+footer .redes-sociales a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+footer .redes-sociales a:hover {
+    color: #ddd;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+
+/* --- Estilos para Menú Hamburguesa y Menú Admin Oculto --- */
+.menu-hamburguesa {
+    position: relative; /* Para posicionar el menú oculto */
+}
+
+#boton-menu-hamburguesa {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-oculto {
+    position: absolute;
+    top: 100%; /* Debajo del botón */
+    right: 1;
+    background-color: #333;
+    border: 1px solid #555;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    display: none; /* Oculto por defecto */
+    z-index: 10; /* Asegurar que esté sobre otros elementos */
+}
+
+.menu-oculto.mostrar-menu {
+    display: block; /* Mostrar cuando tiene la clase 'mostrar-menu' */
+}
+
+.menu-oculto input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    background-color: #444;
+    color: white;
+}
+
+.menu-oculto button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.menu-oculto button:hover {
+    opacity: 0.8;
+}
+
+
+/* --- Media Queries para Diseño Responsive --- */
+/* Ejemplo: Para pantallas más pequeñas, cambiar el grid de productos y el tamaño de texto */
+@media (max-width: 768px) {
+    #contenedor-productos, #productos-admin-list {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Una columna en móviles */
+    }
+    header {
+        flex-direction: column; /* Header vertical en móviles */
+        text-align: center;
+    }
+    header h1 {
+        margin-bottom: 10px;
+    }
+    .carrusel-boton {
+        font-size: 1.2em; /* Botones de carrusel más pequeños en móviles */
+        padding: 8px;
+    }
+    footer .redes-sociales a {
+        font-size: 1.3em; /* Iconos de redes sociales más pequeños en móviles */
+        margin: 0 5px;
+    }
+}
