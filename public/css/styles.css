@@ -4,8 +4,8 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Ejemplo de color de fondo */
-    color: #333; /* Ejemplo de color de texto principal */
+    background: linear-gradient(to bottom right, #e0f7fa, #a5d6a7); /* degradado celeste a verde suave */
+    color: #333; /* color de texto principal */
 }
 
 .header {
