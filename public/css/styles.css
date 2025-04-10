@@ -12,11 +12,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #34462c; /* color neutro claro original */
-    padding: 15px 30px;
+    background: linear-gradient(to right, #2c4c3b, #274435, #233c2f); /* degradado verde claro a oscuro */
+    padding: 1px 3px;
     border-bottom: 2px solid #ddd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
 
 header a {
     text-decoration: none;
@@ -27,6 +28,10 @@ header a {
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+header h1 {
+    color: white;
 }
 
 header a:hover {
@@ -114,7 +119,7 @@ main {
 }
 
 footer {
-    background-color: #333; /* Ejemplo de color de footer */
+    background-color: #34462c; /* Ejemplo de color de footer */
     color: white;
     padding: 10px;
     text-align: center;
@@ -122,6 +127,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 
 /* --- Estilos para el Formulario de Administrador --- */
 #formulario-producto {
