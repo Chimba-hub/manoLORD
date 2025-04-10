@@ -44,17 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const productoBox = document.createElement('div');
             productoBox.classList.add('producto-box');
 
-            productoBox.innerHTML = `
-                <div class="producto-imagen-container">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-frontal">
-                    <div class="imagen-trasera">
-                        <h3>${producto.nombre}</h3>
-                        <p>${producto.descripcion}</p>
-                        <p class="precio">$${producto.precio.toFixed(2)}</p>
-                        ${producto.rebaja ? '<span class="rebaja-tag">¡En Rebaja!</span>' : ''}
-                    </div>
-                </div>
-            `;
+           // En la función mostrarProductosUsuario
+           productoBox.innerHTML = `
+           <div class="producto-imagen-container">
+               <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-frontal" width=300 height=300>
+               <div class="imagen-trasera">
+                   <h3>${producto.nombre}</h3>
+                   <p>${producto.descripcion}</p>
+                   <p class="precio">$${producto.precio.toFixed(2)}</p>
+                   ${producto.rebaja ? '<span class="rebaja-tag">¡En Rebaja!</span>' : ''}
+               </div>
+           </div>
+       `;
             contenedorProductos.appendChild(productoBox);
         });
     };
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productos.forEach(producto => {
             const carruselItem = document.createElement('div');
             carruselItem.classList.add('carrusel-item');
-            carruselItem.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}">`;
+            carruselItem.innerHTML = `<img src="${producto.imagen}" alt="${producto.nombre}" width=500 height=500>`;
             carruselTrack.appendChild(carruselItem);
         });
         actualizarCarrusel(); // Posicionar el carrusel inicialmente
@@ -141,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Opcional:  Implementar carrusel automático si se desea ---
-    // setInterval(() => {
-    //     botonSiguiente.click(); // Simular click en botón siguiente cada cierto tiempo
-    // }, 5000); // Cambiar cada 5 segundos (ejemplo)
+     setInterval(() => {
+        botonSiguiente.click(); // Simular click en botón siguiente cada cierto tiempo
+     }, 5000); // Cambiar cada 5 segundos (ejemplo)
 
 
 });

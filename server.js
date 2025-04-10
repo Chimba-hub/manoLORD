@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(express.json()); // Middleware para parsear JSON en las peticiones POST/PUT
 
-const dbUri = 'mongodb+srv://jonathancano82231:wQRVF4YOO1tiNKgV@cluster0.h3xrm2f.mongodb.net/'; // Reemplaza con tu URI de conexión a MongoDB Atlas o local
+const dbUri = 'mongodb+srv://juanestebanurreac:Fv7lb9gbj0AOHED9@cluster0.h3xrm2f.mongodb.net/'; // Reemplaza con tu URI de conexión a MongoDB Atlas o local
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Conectado a MongoDB'))
     .catch(err => console.error('Error de conexión a MongoDB:', err));

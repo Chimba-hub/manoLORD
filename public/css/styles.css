@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #333; /* Ejemplo de color de header */
+    background-color: #2c462a; /* Ejemplo de color de header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -267,14 +267,27 @@ footer {
 /* --- Estilos para los Productos en la Página de Usuario (Boxes con Hover) --- */
 #contenedor-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo similar al admin */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px 30px; /* Espaciado vertical y horizontal */
     padding: 20px;
+    justify-items: center;
+    row-gap: 80px; /* Aumenta significativamente el espacio entre filas */
 }
 
 .producto-box {
-    perspective: 1000px; /* Necesario para el efecto 3D */
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 250px; /* Margen inferior mucho mayor */
+    perspective: 1000px;
     cursor: pointer;
+    height: auto; /* Altura automática */
+    position: relative; /* Asegura que el posicionamiento funcione correctamente */
+}
+.producto-box-wrapper {
+    margin-bottom: 200px; /* Espacio muy amplio entre filas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .producto-imagen-container {
@@ -291,16 +304,16 @@ footer {
 .imagen-frontal, .imagen-trasera {
     position: absolute;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Ocultar la cara trasera cuando está de espaldas */
+    height: 300px; /* Altura fija y consistente para ambas caras */
+    backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box; /* Para que el padding no afecte el tamaño */
+    box-sizing: border-box;
     padding: 15px;
     border-radius: 8px;
-    background-color: white; /* Fondo blanco para ambos lados */
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -335,13 +348,41 @@ footer {
 }
 
 .producto-box img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 300px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Mantiene las proporciones sin distorsionar */
     border-radius: 8px;
-    display: block; /* Eliminar espacio debajo de la imagen */
+    display: block;
 }
 
-
+.servicios-container {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .servicios-container h2 {
+    font-size: 42px;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .servicios-container h3 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .servicios-container p {
+    font-size: 22px;
+    color: #555;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.6;
+  }
 
 /* --- Estilos para la Sección "Acerca de" --- */
 #acerca-de {
@@ -487,3 +528,4 @@ footer p {
         margin: 0 5px;
     }
 }
+
