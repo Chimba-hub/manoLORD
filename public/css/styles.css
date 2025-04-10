@@ -22,6 +22,22 @@ header h1 {
     margin: 0; /* Eliminar margen por defecto del h1 */
 }
 
+header a {
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+header a:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 main {
     padding: 20px;
     min-height: calc(100vh - 150px); /* Ejemplo para que el main ocupe al menos toda la altura visible */
@@ -39,112 +55,157 @@ footer {
 
 /* --- Estilos para el Formulario de Administrador --- */
 #formulario-producto {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#formulario-producto h2 {
-    margin-top: 0;
-}
-
-#formulario-producto label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
 }
 
 #formulario-producto input[type="text"],
 #formulario-producto input[type="number"],
+#formulario-producto input[type="url"],
 #formulario-producto textarea {
-    width: calc(100% - 22px); /* Ajuste por el padding y borde */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Para que padding y border no aumenten el ancho total */
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
     font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-#formulario-producto textarea {
-    height: 100px; /* Altura inicial para textarea */
-    resize: vertical; /* Permitir redimensionamiento vertical */
+#formulario-producto input:focus,
+#formulario-producto textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container label {
+    margin-left: 8px;
+    font-weight: normal;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
 }
 
 #formulario-producto button[type="submit"],
 #formulario-producto button[type="button"] {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #5cb85c; /* Verde para guardar */
-    color: white;
-    cursor: pointer;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 15px;
     font-size: 1em;
-    margin-right: 10px; /* Espacio entre botones */
 }
 
-#formulario-producto button[type="button"] {
-    background-color: #f0ad4e; /* Naranja para limpiar */
-}
-
-#formulario-producto button[type="submit"]:hover,
-#formulario-producto button[type="button"]:hover {
-    opacity: 0.9;
+#formulario-producto button i {
+    font-size: 1.1em;
 }
 
 
 /* --- Estilos para la Lista de Productos en Admin --- */
 #lista-productos {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e8e7e7;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
+#lista-productos h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Mejoras visuales al contenedor de productos */
 #productos-admin-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    padding-top: 10px;
 }
 
+
+/* Tarjeta individual */
 .producto-admin-item {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 4px;
+    background: linear-gradient(to bottom right, #ffffff, #f7f7f7);
+    border: 1px solid #b7b7b7;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 20px;
     text-align: center;
-    background-color: #f9f9f9;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.producto-admin-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .producto-admin-item img {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+.producto-admin-item h3 {
+    font-size: 1.1em;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Botones */
+.acciones-producto {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .acciones-producto button {
     padding: 8px 12px;
-    margin: 5px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .acciones-producto .btn-editar {
-    background-color: #007bff; /* Azul para editar */
+    background-color: #007bff;
     color: white;
+}
+
+.acciones-producto .btn-editar:hover {
+    background-color: #0056b3;
 }
 
 .acciones-producto .btn-eliminar {
-    background-color: #dc3545; /* Rojo para eliminar */
+    background-color: #dc3545;
     color: white;
 }
 
-.acciones-producto button:hover {
-    opacity: 0.8;
+.acciones-producto .btn-eliminar:hover {
+    background-color: #b02a37;
 }
+
 
 
 /* --- Estilos para el Carrusel --- */
