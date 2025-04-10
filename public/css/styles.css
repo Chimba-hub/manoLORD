@@ -291,62 +291,252 @@ footer {
 
 
 
-/* --- Estilos para el Carrusel --- */
+/* Estilos mejorados para el carrusel */
+
+/* Contenedor principal del carrusel */
 #carrusel-productos {
-    overflow: hidden; /* Importante para que el carrusel no se desborde */
-    margin-bottom: 30px;
-    position: relative; /* Para posicionar los botones de navegación */
+    overflow: hidden;
+    margin-bottom: 50px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
 }
 
 .carrusel-container {
-    max-width: 500px;
-    overflow: hidden; /* Ocultar contenido que se desborda */
-    justify-self: center;
-    align-self: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
 }
 
+/* Pista de slides */
 .carrusel-track {
-    display: flex; /* Items uno al lado del otro */
-    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 400px;
 }
 
+/* Cada item del carrusel */
 .carrusel-item {
-    width: 100%; /* Ocupa todo el ancho del contenedor del carrusel */
-    flex-shrink: 0; /* Evitar que los items se encojan */
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .carrusel-item img {
-    width: 100%;
-    height: auto; /* Mantener la proporción de la imagen */
-    display: block; /* Eliminar espacio debajo de la imagen */
+    width: auto;
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
 }
 
+/* Botones de navegación */
 .carrusel-boton {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los botones */
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
-    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carrusel-boton:hover {
     opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .carrusel-boton-anterior {
-    left: 10px;
+    left: 20px;
 }
 
 .carrusel-boton-siguiente {
-    right: 10px;
+    right: 20px;
 }
 
+/* Indicadores de página */
+.carrusel-indicadores {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.carrusel-indicador {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carrusel-indicador.activo {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+.carrusel-indicador:hover {
+    background-color: white;
+}
+
+/* Información del producto en el carrusel */
+.carrusel-info-producto {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 70%, transparent 100%);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.carrusel-producto-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carrusel-producto-info h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.carrusel-producto-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.carrusel-precio-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.carrusel-precio-info .precio {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.rebaja-tag {
+    background-color: #e63946;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+.boton-comprar {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+.boton-comprar:hover {
+    background-color: #1d7a70;
+}
+
+/* Animación para cambios de slide */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Estilos responsive para el carrusel */
+@media (max-width: 768px) {
+    .carrusel-track {
+        height: 300px;
+    }
+    
+    .carrusel-item img {
+        height: 300px;
+    }
+    
+    .carrusel-producto-info h3 {
+        font-size: 1.5em;
+    }
+    
+    .carrusel-producto-info p {
+        font-size: 0.9em;
+    }
+    
+    .carrusel-boton {
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrusel-track {
+        height: 250px;
+    }
+    
+    .carrusel-item img {
+        height: 250px;
+    }
+    
+    .carrusel-info-producto {
+        padding: 15px 10px;
+    }
+    
+    .carrusel-producto-info h3 {
+        font-size: 1.3em;
+    }
+    
+    .carrusel-producto-info p {
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+    
+    .boton-comprar {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
 
 /* --- Estilos para los Productos en la Página de Usuario (Boxes con Hover) --- */
 #contenedor-productos {
