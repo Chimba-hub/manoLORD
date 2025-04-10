@@ -9,17 +9,19 @@
     <!-- TODO:  Añadir CSS de la librería de carrusel si se usa una -->
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="menu-hamburguesa">
-            <button id="boton-menu-hamburguesa"><i class="fas fa-bars"></i></button>
+            <button id="boton-menu-hamburguesa" class="hamburguesa-btn"><i class="fas fa-bars"></i></button>
             <div id="menu-admin-oculto" class="menu-oculto">
+                <input type="text" id="usuario-admin" placeholder="Usuario de Administrador">
                 <input type="password" id="clave-admin" placeholder="Clave de Administrador">
                 <button id="boton-admin-login">Entrar</button>
             </div>
         </div>
     
-        <img src="./assets/logo.png" width=250 height=250>
+        <img src="./assets/logo.png" width="100" height="100" alt="Logo" class="logo-header">
     </header>
+    
     
     <main>
         <section id="carrusel-productos">
@@ -44,7 +46,7 @@
         <section id="contenedor-productos">
             <!-- Aquí se insertarán los productos como "boxes" dinámicamente con JavaScript -->
         </section>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br>
+        
         <section id="acerca-de">
             <h2>Acerca de Nosotros</h2>
             <div id="info-integrantes">

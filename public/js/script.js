@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonMenuHamburguesa = document.getElementById('boton-menu-hamburguesa');
     const menuAdminOculto = document.getElementById('menu-admin-oculto');
     const botonAdminLogin = document.getElementById('boton-admin-login');
+    const usuarioAdminInput = document.getElementById('usuario-admin');
     const claveAdminInput = document.getElementById('clave-admin');
 
 
@@ -128,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botonAdminLogin.addEventListener('click', () => {
         const claveAdmin = claveAdminInput.value;
+        const usuarioAdmin= usuarioAdminInput.value
         // TODO:  Implementar validación de clave de administrador (lado cliente - muy básico, para un taller, en producción sería backend con seguridad)
-        if (claveAdmin === 'admin123') { // Clave de ejemplo, ¡cambiar en un escenario real!
+        if (claveAdmin === 'admin123' && usuarioAdmin=='admin123') { 
+            alert('Clave de administrador correcta.');// Clave de ejemplo, ¡cambiar en un escenario real!
             window.location.href = 'admin.html'; // Redirigir a la página de admin
         } else {
             alert('Clave de administrador incorrecta.');
